@@ -37,7 +37,8 @@ func isHTTPMethodValid(
 	method string) bool {
 
 	if r.Method != method {
-		errMsg := fmt.Sprintf("%s http method is not supported on %s resource", r.Method, r.URL.Path)
+		errMsg := fmt.Sprintf(
+			"%s http method is not supported on %s resource", r.Method, r.URL.Path)
 		writeErrorResponse(r, w, http.StatusMethodNotAllowed, errMsg)
 		return false
 	}
